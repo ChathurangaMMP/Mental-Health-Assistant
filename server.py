@@ -13,6 +13,10 @@ passwords = []
 ids=[]
 
 
+
+appointment =[]
+appointment_id = 0
+
 @app.route('/static/js/<path:filename>')
 def static1(filename):
     print(filename)
@@ -39,9 +43,6 @@ def hello_world():
 
 
 
-@app.route('/profile')
-def get_home():
-    return render_template('index.html')
 
 
   
@@ -59,6 +60,58 @@ def sign_up():
 
     
     return jsonify({"success": True})
+
+
+@app.route('/profile')
+def get_home():
+    return render_template('index.html')
+
+@app.route('/profile/createappointment' ,methods = ['POST'])
+def create_appointment():
+    global appointment_id
+    data = request.get_json()
+
+    topic = data["topic"]
+    description = data["description"]
+    time = data["time"]
+    
+    appointment_id= appointment_id+1
+
+    appointment.append({"topic" :topic,"description" : description,"time" : time, "id":appointment_id,"status": "Processing"})    
+    return jsonify({"success": True})
+
+@app.route('/profile/editappointment' ,methods = ['POST'])
+def edit_appointment():
+    data = request.get_json()
+
+    topic = data["topic"]
+    description = data["description"]
+    time = data["time"]
+    id = data["id"]
+    
+    for i in range(len(appointment)):
+        if(appointment[i]['id'] == id):
+             appointment[i]={"topic" :topic,"description" : description,"time" : time, "id": id,"status": "Processing"}
+             break
+    return jsonify({"success": True})
+
+
+@app.route('/profile/deleteappointment' ,methods = ['DELETE'])
+def delete_appointment():
+    data = request.get_json()
+    id = data["id"]
+    
+    for i in range(len(appointment)):
+        if(appointment[i]['id'] == id):
+             del appointment[i]
+             break
+
+    return jsonify({"success": True})
+
+
+@app.route('/profile/appointments' ,methods = ['GET'])
+def get_appointments():
+  return {"data":appointment} ,200
 
 
 app.use_static = True
