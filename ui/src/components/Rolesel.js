@@ -1,6 +1,10 @@
 function Rolesel(){
     return(
+<<<<<<< HEAD
         <div class="modal fade" id="chooserole" data-bs-backdrop="true" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+=======
+        <div class="modal fade" id="chooserole" data-bs-backdrop="false" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

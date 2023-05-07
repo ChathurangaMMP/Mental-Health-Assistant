@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import { useState , useEffect} from "react";
+<<<<<<< HEAD
 import Cookies from 'js-cookie';
 
 function Refresh() {
@@ -8,6 +9,11 @@ function Refresh() {
   const email = Cookies.get('MMemail');
 
   window.location.href = 'http://localhost:5000/account'+'?token='+token+'&email='+email;
+=======
+
+function Refresh() {
+    window.location.href = 'http://localhost:3000/dashboard';
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
   }
 
 function TicketDetail(props) {
@@ -30,6 +36,7 @@ function TicketDetail(props) {
 
   const deleteappointment  = (event) => {
     event.preventDefault();
+<<<<<<< HEAD
     
     const token = Cookies.get('MMtoken');
     const email = Cookies.get('MMemail');
@@ -40,6 +47,14 @@ function TicketDetail(props) {
         id:id,
         token: token,
         email:email
+=======
+  
+
+    fetch("http://127.0.0.1:8080/profile/deleteappointment", {
+      method: "DELETE",
+      body: JSON.stringify({
+        id:id
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -59,18 +74,26 @@ function TicketDetail(props) {
     const showTime =
       date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 
+<<<<<<< HEAD
       const token = Cookies.get('MMtoken');
       const email = Cookies.get('MMemail'); 
 
     fetch("http://localhost:5000/profile/editappointment", {
+=======
+    fetch("http://127.0.0.1:8080//profile/editappointment", {
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
       method: "POST",
       body: JSON.stringify({
         topic: topic,
         description: description,
         time: showTime,
+<<<<<<< HEAD
         id:id,
         token: token,
         email:email
+=======
+        id:id
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",

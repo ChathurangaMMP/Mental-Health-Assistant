@@ -20,8 +20,31 @@ const butonstyle = {
 }
 
 function App() {
+<<<<<<< HEAD
 
  
+=======
+  const [Asign, Setasign] = useState(false);
+
+  const mypage = () => {
+    const component = ""
+
+    fetch('http://127.0.0.1:8080/profile', {
+         method: 'GET'
+    
+      })
+         .then((res) =>  
+         {console.log(res)
+         component = res.body})
+        
+         .catch((err) => {
+            console.log(err.message);
+         });
+    console.log('Console' , component)
+    return component
+  }
+
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
   return (
 
 <Router>
@@ -77,7 +100,11 @@ function App() {
 </div>
 </>}/>
 
+<<<<<<< HEAD
 
+=======
+<Route path = "/profile" Component={mypage} />
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
 </Routes>
 </Router> 
 

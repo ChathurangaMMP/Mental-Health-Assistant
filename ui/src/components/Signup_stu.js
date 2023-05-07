@@ -2,13 +2,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import { useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+<<<<<<< HEAD
 import Cookies from 'js-cookie';
 
 
+=======
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
 
 
 
 
+<<<<<<< HEAD
+=======
+function changeURL() {
+  window.location.href = 'https://codefrontend.com';
+}
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
 
 
 function Signup_stu(){
@@ -56,6 +65,7 @@ function Signup_stu(){
 
   
 
+<<<<<<< HEAD
   const loggin_process = async (res) =>{
           const data = await res.json();
           console.log("Loggin process");
@@ -95,6 +105,12 @@ function Signup_stu(){
          });
    
     
+=======
+
+  const GetHome = (event) => {
+
+   changeURL();
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
    
   }
    
@@ -107,7 +123,11 @@ function Signup_stu(){
             //  const [body, setBody] = useState('');
     if(TaC){
       setAllow(false)
+<<<<<<< HEAD
       fetch('http://127.0.0.1:5000/signup', {
+=======
+      fetch('http://127.0.0.1:8080/signup', {
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
          method: 'POST',
          body: JSON.stringify({
             email: email,
@@ -121,7 +141,11 @@ function Signup_stu(){
             'Content-type': 'application/json; charset=UTF-8',
          },
       })
+<<<<<<< HEAD
          .then((res) =>login(res.json()))
+=======
+         .then((res) =>GetHome(event))
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
         
          .catch((err) => {
             console.log(err.message);
@@ -137,7 +161,11 @@ function Signup_stu(){
 
     return(
       
+<<<<<<< HEAD
        < div class="modal fade" id="stu" aria-hidden="true"  data-bs-backdrop="true"   aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+=======
+       < div class="modal fade" id="stu" aria-hidden="true"  data-bs-backdrop="false"   aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
   <div class="modal-dialog modal-dialog-centered" >
     <div class="modal-content">
       <div class="modal-header">

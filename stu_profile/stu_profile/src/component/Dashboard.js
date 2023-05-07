@@ -3,7 +3,10 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import Ticket from "./Ticket";
 import Application from "./Application";
 import { useState, useEffect } from 'react';
+<<<<<<< HEAD
 import Cookies from 'js-cookie';
+=======
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
 
 function Dashboard() {
   const [data,setData] =  useState([]);
@@ -13,6 +16,7 @@ function Dashboard() {
   }, []);
 
   async function fetchData() {
+<<<<<<< HEAD
     const token = Cookies.get('MMtoken');
     const email = Cookies.get('MMemail');
     
@@ -20,6 +24,9 @@ function Dashboard() {
     console.log(token);
     console.log(email);
     const response = await fetch('http://127.0.0.1:5000/profile/appointments'+"?email="+email+"&token="+token);
+=======
+    const response = await fetch('http://127.0.0.1:8080/profile/appointments');
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
     console.log(response)
     const data = await response.json();
     setData(data.data);

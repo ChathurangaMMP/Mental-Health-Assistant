@@ -21,10 +21,13 @@ user_questionary_response
     - create_user_questionary_responses
     - add_user_questionary_responses_data
 
+<<<<<<< HEAD
 depression_questionary_responses
     - create_depression_questionary_responses
     - add_depression_questionary_responses_data
 
+=======
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
 # general functions
     - create_all_tables
     - read_all_data_from_table
@@ -32,7 +35,10 @@ depression_questionary_responses
     - update_record_in_table
     - delete_table
     - delete_record_from_table
+<<<<<<< HEAD
     - delete_all_tables
+=======
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
 '''
 
 filename = 'medx_database.db'
@@ -123,6 +129,7 @@ def create_user_questionary_responses():
     cursor = conn.cursor()
     cursor.execute('''CREATE TABLE IF NOT EXISTS user_questionary_response
                     (email TEXT PRIMARY KEY,
+<<<<<<< HEAD
                     q_1 TEXT,
                     q_2 TEXT,
                     q_3 TEXT,
@@ -180,10 +187,16 @@ def create_depression_questionary_responses():
                     q_20 INTEGER,
                     q_21 INTEGER,
                     depression_total INTEGER)''')
+=======
+                    question_1 TEXT,
+                    question_2 TEXT,
+                    question_3 TEXT)''')
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
     conn.commit()
     conn.close()
 
 
+<<<<<<< HEAD
 def add_depression_questionary_responses_data(response):
     '''
     The variable response is a list of elements. The first element is the email of the user.
@@ -198,6 +211,15 @@ def add_depression_questionary_responses_data(response):
                 q_17, q_18, q_19, q_20, q_21, depression_total) \
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
         tuple(response))
+=======
+def add_user_questionary_responses_data(email, question_1, question_2, question_3):
+    conn = sqlite3.connect(filename)
+    cursor = conn.cursor()
+    cursor.execute(
+        "INSERT INTO user_questionary_response (email, question_1, question_2, question_3) \
+            VALUES (?, ?, ?, ?)",
+        (email, question_1, question_2, question_3))
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
     conn.commit()
     conn.close()
 
@@ -256,6 +278,7 @@ def delete_table(table_name):
     conn.close()
 
 
+<<<<<<< HEAD
 def delete_all_tables():
     conn = sqlite3.connect(filename)
     cursor = conn.cursor()
@@ -268,4 +291,6 @@ def delete_all_tables():
     conn.close()
 
 
+=======
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
 # create_all_tables()

@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import { useState } from "react";
+<<<<<<< HEAD
 import Cookies from 'js-cookie';
 
 function Refresh() {
@@ -12,6 +13,14 @@ function Refresh() {
 
 function Application() {
   
+=======
+
+function Refresh() {
+    window.location.href = 'http://localhost:3000/dashboard';
+  }
+
+function Application() {
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
   const [topic, setTopic] = useState("");
   const [description, setDescription] = useState("");
 
@@ -29,18 +38,25 @@ function Application() {
     const showTime =
       date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 
+<<<<<<< HEAD
     const token = Cookies.get('MMtoken');
     const email = Cookies.get('MMemail');
 
 
     fetch("http://localhost:5000/profile/createappointment", {
+=======
+    fetch("http://127.0.0.1:8080/profile/createappointment", {
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
       method: "POST",
       body: JSON.stringify({
         topic: topic,
         description: description,
         time: showTime,
+<<<<<<< HEAD
         token: token,
         email:email
+=======
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",

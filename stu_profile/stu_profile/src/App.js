@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
 import './App.css';
 import './style/dashboardstyle.css';
 import Navbar from './component/Nav_Bar';
@@ -5,6 +9,7 @@ import Dashboard from './component/Dashboard';
 import { BrowserRouter as Router ,Route ,Routes} from 'react-router-dom';
 import Session from './component/Session';
 import Community from './component/Community';
+<<<<<<< HEAD
 import { useState, useEffect ,setState } from 'react';
 
 function App() {
@@ -46,8 +51,30 @@ function App() {
         </Routes>
       </Router>
     </>
+=======
+
+function App() {
+  return (
+  <>
+  <Navbar></Navbar>
+  <Router>
+
+  <Routes>
+
+  <Route path = "/" Component={Dashboard} />
+  <Route path = "/dashboard" Component={Dashboard} />
+  <Route path = "/session" Component={Session} />
+  <Route path = "/community" Component={Community} />
+  
+  </Routes>
+  </Router>
+  </>
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
   );
 }
 
 export default App;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 78686413f54485c53590d6b1be34005f51c5f223
