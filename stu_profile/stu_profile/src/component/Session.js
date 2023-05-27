@@ -11,6 +11,7 @@ function Session() {
   const [data,setData] =  useState([]);
   const [token, setMMtoken] = useCookies(["MMtoken"]);
   const [email, setMMemail] = useCookies(["MMemail"]);
+  const url = "http://localhost:5000";
 
   useEffect(() => {
     fetchData();
@@ -21,7 +22,7 @@ function Session() {
     
     console.log("------------------------------------");
 
-    const response = await fetch('http://localhost:5000/profile/sessions'+"?email="+email.MMemail+"&token="+token.MMtoken);
+    const response = await fetch(url+'/profile/sessions'+"?email="+email.MMemail+"&token="+token.MMtoken);
 
     const data = await response.json();
     setData(data.data);

@@ -16,6 +16,8 @@ function TicketDetail(props) {
   const [token, setMMtoken] = useCookies(["MMtoken"]);
   const [email, setMMemail] = useCookies(["MMemail"]);
 
+  const url = "http://https://3e82-2402-4000-2281-9cd1-8974-579a-3f2a-f6d5.ngrok-free.app";
+
   useEffect(() => {
     console.log("Id for ticket",id);
     setDetailid("ticketdetail"+id);})
@@ -40,7 +42,7 @@ function TicketDetail(props) {
     event.preventDefault();
     
     
-    fetch("http://localhost:5000/profile/deleteappointment", {
+    fetch(url+"/profile/deleteappointment", {
       method: "DELETE",
       body: JSON.stringify({
         id:id,
@@ -51,7 +53,7 @@ function TicketDetail(props) {
         "Content-type": "application/json; charset=UTF-8",
       },
     })
-      .then((res) => window.location.href = 'http://localhost:5000/account'+'?token='+token.MMtoken+'&email='+email.MMemail)
+      .then((res) => window.location.href = url+'/account'+'?token='+token.MMtoken+'&email='+email.MMemail)
 
       .catch((err) => {
         console.log(err.message);
@@ -65,7 +67,7 @@ function TicketDetail(props) {
     const showTime = date.toString();
 
 
-    fetch("http://localhost:5000/profile/editappointment", {
+    fetch(url+"/profile/editappointment", {
       method: "POST",
       body: JSON.stringify({
         topic: topic,
@@ -80,7 +82,7 @@ function TicketDetail(props) {
         "Content-type": "application/json; charset=UTF-8",
       },
     })
-      .then((res) => window.location.href = 'http://localhost:5000/account'+'?token='+token.MMtoken+'&email='+email.MMemail)
+      .then((res) => window.location.href = url+'/account'+'?token='+token.MMtoken+'&email='+email.MMemail)
 
       .catch((err) => {
         console.log(err.message);

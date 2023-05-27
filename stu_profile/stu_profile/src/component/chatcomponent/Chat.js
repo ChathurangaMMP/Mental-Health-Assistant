@@ -34,6 +34,8 @@ function Chat(props) {
 
   const bottomRef = useRef(null);
 
+  const url = "http://ws://3e82-2402-4000-2281-9cd1-8974-579a-3f2a-f6d5.ngrok-free.app";
+
   const scrollToBottom = () => {
     if (chatContainerRef.current) {
       chatContainerRef.current.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
@@ -126,7 +128,7 @@ function Chat(props) {
 
 
     // Create a new WebSocket connection
-    const newSocket = new WebSocket('ws://localhost:5002' ,undefined,undefined, {
+    const newSocket = new WebSocket(url ,undefined,undefined, {
       headers:{email: stumail,
         id: id,},
       });

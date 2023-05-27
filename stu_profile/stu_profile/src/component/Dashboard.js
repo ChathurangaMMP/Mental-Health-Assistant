@@ -11,6 +11,8 @@ function Dashboard() {
   const [data,setData] =  useState([]);
   const [token, setMMtoken] = useCookies(["MMtoken"]);
   const [email, setMMemail] = useCookies(["MMemail"]);
+
+  const url = "http://https://3e82-2402-4000-2281-9cd1-8974-579a-3f2a-f6d5.ngrok-free.app";
   
   useEffect(() => {
     const fetchDataOnMount = async () => {
@@ -36,7 +38,7 @@ function Dashboard() {
     console.log("+++++++++++++++++");
     console.log(token);
     console.log(email);
-    const response = await fetch('http://localhost:5000/profile/appointments'+"?email="+email.MMemail+"&token="+token.MMtoken);
+    const response = await fetch(url+'/profile/appointments'+"?email="+email.MMemail+"&token="+token.MMtoken);
     console.log(response)
     const data = await response.json();
     setData(data.data);

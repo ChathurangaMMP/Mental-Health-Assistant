@@ -15,7 +15,7 @@ function Signin(){
   const [MMtoken, setMMtoken] = useCookies(["MMtoken"]);
   const [MMemail, setMMemail] = useCookies(["MMemail"]);
 
-
+  const url = "http://https://3e82-2402-4000-2281-9cd1-8974-579a-3f2a-f6d5.ngrok-free.app";
 
  
    
@@ -49,7 +49,7 @@ function Signin(){
             setMMtoken("MMtoken", data.token);
             
             console.log(data.email)
-            window.location.href = 'http://localhost:5000/account?token='+data.token+'&email='+data.email;
+            window.location.href = url+'/account?token='+data.token+'&email='+data.email;
  
             
           }
@@ -59,7 +59,7 @@ function Signin(){
 
     console.log("Loggin");
 
-    fetch('http://localhost:5000/login', {
+    fetch(url+'/login', {
          method: 'POST',
          body: JSON.stringify({
             email: email,

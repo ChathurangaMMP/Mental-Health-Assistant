@@ -12,6 +12,8 @@ function Application() {
   const [topic, setTopic] = useState("");
   const [description, setDescription] = useState("");
 
+  const url = "http://https://3e82-2402-4000-2281-9cd1-8974-579a-3f2a-f6d5.ngrok-free.app";
+
   const handleTopicchange = (event) => {
     setTopic(event.target.value);
   };
@@ -44,7 +46,7 @@ function Application() {
     
 
 
-    fetch("http://localhost:5000/profile/createappointment", {
+    fetch(url+"/profile/createappointment", {
       method: "POST",
       body: JSON.stringify({
         topic: topic,
@@ -58,7 +60,7 @@ function Application() {
         "Content-type": "application/json; charset=UTF-8",
       },
     })
-      .then((res) => window.location.href = 'http://localhost:5000/account'+'?token='+token.MMtoken+'&email='+email.MMemail)
+      .then((res) => window.location.href = url+'/account'+'?token='+token.MMtoken+'&email='+email.MMemail)
 
       .catch((err) => {
         console.log(err.message);

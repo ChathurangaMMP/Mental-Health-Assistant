@@ -26,6 +26,7 @@ function Signup_stu(){
   const [MMtoken, setMMtoken] = useCookies(["MMtoken"]);
   const [MMemail, setMMemail] = useCookies(["MMemail"]);
 
+  const url = "http://https://3e82-2402-4000-2281-9cd1-8974-579a-3f2a-f6d5.ngrok-free.app";
 
 
  
@@ -67,7 +68,7 @@ function Signup_stu(){
             setMMtoken("MMtoken", data.token);
             
             console.log(data.email)
-            window.location.href = 'http://localhost:5000/account?token='+data.token+'&email='+data.email;
+            window.location.href = url+'/account?token='+data.token+'&email='+data.email;
  
             
           }
@@ -76,7 +77,7 @@ function Signup_stu(){
 
     console.log("Loggin");
 
-    fetch('http://localhost:5000/login', {
+    fetch(url+'/login', {
          method: 'POST',
          body: JSON.stringify({
             email: email,
@@ -107,7 +108,7 @@ function Signup_stu(){
             //  const [body, setBody] = useState('');
     if(TaC){
       setAllow(false)
-      fetch('http://localhost:5000/signup', {
+      fetch(url+'/signup', {
          method: 'POST',
          body: JSON.stringify({
             email: email,
