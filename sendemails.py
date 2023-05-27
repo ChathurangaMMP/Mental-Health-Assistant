@@ -36,10 +36,3 @@ def send_email(recipient_emails, subject, message):
     finally:
         # Close the SMTP connection
         server.quit()
-
-
-recipient_emails = ['surenbandara7@gmail.com']
-subject = 'Hello from Python'
-message = 'This is the content of the email.'
-
-send_email( recipient_emails, subject, message)
