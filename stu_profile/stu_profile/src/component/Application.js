@@ -12,7 +12,7 @@ function Application() {
   const [topic, setTopic] = useState("");
   const [description, setDescription] = useState("");
 
-  const url = "localhost:5000";
+  const url = "http://localhost:5000";
 
   const handleTopicchange = (event) => {
     setTopic(event.target.value);

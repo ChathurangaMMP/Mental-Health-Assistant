@@ -44,16 +44,7 @@ function App() {
 
 <div class="container">
   <div class="row">
-    <div class="col">
-
-    <Quote></Quote>
-    
-
-
-    </div>
-    
-
-    <div class="col">
+  <div class="col">
     
     <div class="container">
     <div class="col">
@@ -69,6 +60,13 @@ function App() {
 
 </div>
 </div>
+    <div class="col">
+
+    <Quote></Quote>
+    
+
+
+    </div>
 
 
     </div>

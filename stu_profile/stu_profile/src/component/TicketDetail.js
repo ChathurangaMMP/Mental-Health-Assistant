@@ -16,7 +16,7 @@ function TicketDetail(props) {
   const [token, setMMtoken] = useCookies(["MMtoken"]);
   const [email, setMMemail] = useCookies(["MMemail"]);
 
-  const url = "localhost:5000";
+  const url = "http://localhost:5000";
 
   useEffect(() => {
     console.log("Id for ticket",id);

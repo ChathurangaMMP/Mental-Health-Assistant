@@ -11,7 +11,7 @@ function Session() {
   const [data,setData] =  useState([]);
   const [token, setMMtoken] = useCookies(["MMtoken"]);
   const [email, setMMemail] = useCookies(["MMemail"]);
-  const url = "http://localhost:5000";
+  const url = "http://http://localhost:5000";
 
   useEffect(() => {
     fetchData();

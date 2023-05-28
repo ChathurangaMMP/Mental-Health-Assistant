@@ -7,7 +7,7 @@ function Quote(){
             <div class="col col-lg-10 col-xl-8">
       
               <div class="card bg-primary text-white rounded-3 mb-3">
-                <div class="card-body p-4">
+                <div class="card-body p-4" style={{width: '300px', height: '200px'}}> 
                   <figure class="mb-0">
                     <blockquote class="blockquote">
                       <p class="pb-2">
